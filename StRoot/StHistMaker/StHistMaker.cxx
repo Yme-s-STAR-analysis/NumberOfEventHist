@@ -18,7 +18,7 @@
 #include "Stiostream.h"
 #include "TEfficiency.h"
 #include "TFile.h"
-#include "TH3F.h"
+#include "TH1F.h"
 #include "TProfile.h"
 #include "TRandom.h"
 #include "TTree.h"
@@ -29,7 +29,7 @@
 #include "StRoot/TpcShiftTool/TpcShiftTool.h"
 #include "StRoot/TriggerTool/TriggerTool.h"
 #include "StRoot/StCFMult/StCFMult.h"
-#include "StRoot/StCFMult/BadRunTool.h"
+#include "StRoot/BadRunTool/BadRunTool.h"
 
 StHistMaker::StHistMaker(
 	const char* name, 
@@ -46,7 +46,7 @@ StHistMaker::~StHistMaker() {}
 Int_t StHistMaker::Init() {
   	mFileOut = new TFile(mOutputName, "recreate");
 
-	hNev = new TH1D(
+	hNev = new TH1F(
 		"hNev", "Number of Events;Cuts;Counts",
 		10, -0.5, 9.5
 	);
@@ -90,7 +90,7 @@ Int_t StHistMaker::Init() {
 //---------------------------------------------------------
 Int_t StHistMaker::Finish() {
 	mFileOut->cd();
-	hNev->Write()
+	hNev->Write();
 	mFileOut->Close();
 	return kStOK;
 }
