@@ -2,9 +2,13 @@
 
 `author: yghuang`
 
-`version: 1.0`
+`version: 1.1`
 
 ## Patch Note
+
+23.04.2024 by yghuang (v1.1):
+
+> Fix some bugs
 
 23.04.2024 by yghuang (v1.0):
 
