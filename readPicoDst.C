@@ -42,6 +42,7 @@ void readPicoDst(const Char_t *inputFile = "file.list", TString JobIdName = "nEv
     for (Int_t i = 0; i < nEvents; i++) {
         if (i > nEvents*1.0*percent / 10) {
             cout << " Working on eventNumber " << i << " / " << nEvents << endl;
+            percent += 1;
         }
 
         chain->Clear();
