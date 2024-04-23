@@ -1,4 +1,4 @@
-#include "StPidHistMaker.h"
+#include "StHistMaker.h"
 
 #include <TMath.h>
 
@@ -31,7 +31,7 @@
 #include "StRoot/StCFMult/StCFMult.h"
 #include "StRoot/StCFMult/BadRunTool.h"
 
-StPidHistMaker::StPidHistMaker(
+StHistMaker::StHistMaker(
 	const char* name, 
 	StPicoDstMaker* picoMaker,
     const char* outName
@@ -41,9 +41,9 @@ StPidHistMaker::StPidHistMaker(
 	mPicoDst = 0;
 }
 
-StPidHistMaker::~StPidHistMaker() {}
+StHistMaker::~StHistMaker() {}
 
-Int_t StPidHistMaker::Init() {
+Int_t StHistMaker::Init() {
   	mFileOut = new TFile(mOutputName, "recreate");
 
 	hNev = new TH1D(
@@ -88,14 +88,14 @@ Int_t StPidHistMaker::Init() {
 }
 
 //---------------------------------------------------------
-Int_t StPidHistMaker::Finish() {
+Int_t StHistMaker::Finish() {
 	mFileOut->cd();
 	hNev->Write()
 	mFileOut->Close();
 	return kStOK;
 }
 
-void StPidHistMaker::Clear(Option_t* opt) {}
+void StHistMaker::Clear(Option_t* opt) {}
 
 //---------------------------------------------------------------
 Int_t StHistMaker::Make() {
