@@ -29,6 +29,7 @@
 #include "StRoot/TpcShiftTool/TpcShiftTool.h"
 #include "StRoot/TriggerTool/TriggerTool.h"
 #include "StRoot/StCFMult/StCFMult.h"
+#include "StRoot/StCFMult/BadRunTool.h"
 
 StPidHistMaker::StPidHistMaker(
 	const char* name, 
