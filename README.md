@@ -2,9 +2,13 @@
 
 `author: yghuang`
 
-`version: 1.1`
+`version: 1.2`
 
 ## Patch Note
+
+24.04.2024 by yghuang (v1.2):
+
+> Add a plot macro
 
 23.04.2024 by yghuang (v1.1):
 
